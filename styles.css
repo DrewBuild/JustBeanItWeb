@@ -46,7 +46,8 @@ a {
 }
 
 a:focus-visible,
-.button:focus-visible {
+.button:focus-visible,
+input:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
@@ -318,6 +319,73 @@ h3 {
 
 .confirmation-card .button {
   margin-top: 16px;
+}
+
+.reset-card {
+  text-align: left;
+}
+
+.reset-card .confirmation-logo,
+.reset-card .eyebrow,
+.reset-card h1,
+.reset-card .tagline,
+.success-view {
+  text-align: center;
+}
+
+.reset-card .confirmation-logo {
+  margin-bottom: 22px;
+}
+
+.reset-card h1 {
+  font-size: clamp(2.25rem, 8vw, 3.7rem);
+}
+
+.reset-form {
+  display: grid;
+  margin-top: 26px;
+  gap: 18px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field label {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 750;
+}
+
+.form-field input {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0 14px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.form-field input:disabled,
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.form-message {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-align: center;
+}
+
+.form-message[data-type="error"] {
+  color: var(--text);
 }
 
 .check-mark {
