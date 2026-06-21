@@ -1,0 +1,389 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --text: #0b0f14;
+  --muted: #4b5563;
+  --border: #dce3ea;
+  --accent: #013a63;
+  --accent-contrast: #ffffff;
+  --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #080b0f;
+    --surface: #10161d;
+    --text: #f5f7fa;
+    --muted: #b6c2cf;
+    --border: #26313d;
+    --accent: #89c2d9;
+    --accent-contrast: #061016;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.site-header,
+.site-footer {
+  width: min(100% - 32px, 1040px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.site-header {
+  padding: 28px 0;
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 750;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.site-nav,
+.site-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.site-nav a,
+.site-footer a {
+  color: var(--muted);
+  font-size: 0.96rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-footer a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.section {
+  width: min(100% - 32px, 760px);
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: calc(100vh - 210px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0 96px;
+  text-align: center;
+}
+
+.hero-logo {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 26px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: clamp(3rem, 12vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.75rem, 6vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 18px;
+  font-size: 1.15rem;
+}
+
+.tagline {
+  margin-bottom: 12px;
+  color: var(--text);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 650;
+}
+
+.lede,
+.content-card > p,
+.confirmation-card > p,
+.info-section > p {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.lede {
+  max-width: 590px;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-left: auto;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0 20px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.button-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+.button-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.info-section {
+  padding: 64px 0 92px;
+}
+
+.section-heading {
+  max-width: 620px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.feature-card,
+.content-card,
+.confirmation-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.feature-card {
+  margin-top: 30px;
+  padding: 28px;
+}
+
+.feature-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+  list-style: none;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--muted);
+}
+
+.feature-list li::before {
+  position: absolute;
+  top: 0.64em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+}
+
+.page-main {
+  width: min(100% - 32px, 760px);
+  margin: 0 auto;
+  padding: 58px 0 96px;
+}
+
+.content-card {
+  padding: clamp(28px, 6vw, 46px);
+}
+
+.content-card h1 {
+  font-size: clamp(2.35rem, 8vw, 4.2rem);
+}
+
+.content-card h2 {
+  margin-top: 34px;
+  font-size: 1.35rem;
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 750;
+}
+
+.support-card {
+  min-height: 320px;
+}
+
+.confirmed-page {
+  min-height: 100vh;
+  display: grid;
+  width: min(100% - 32px, 620px);
+  margin: 0 auto;
+  place-items: center;
+  padding: 42px 0;
+}
+
+.confirmation-card {
+  width: 100%;
+  padding: clamp(30px, 7vw, 52px);
+  text-align: center;
+}
+
+.confirmation-card h1 {
+  font-size: clamp(2.4rem, 9vw, 4.4rem);
+}
+
+.confirmation-card .button {
+  margin-top: 16px;
+}
+
+.check-mark {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 22px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 1.7rem;
+  font-weight: 850;
+}
+
+.confirmation-logo {
+  display: block;
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 14px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.small-note {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  padding: 28px 0 36px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.site-footer span {
+  color: var(--text);
+  font-weight: 750;
+}
+
+@media (max-width: 640px) {
+  .site-header,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav,
+  .site-footer nav {
+    gap: 12px 16px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 76px 0 80px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .actions {
+    width: min(100%, 320px);
+    margin: 0 auto;
+  }
+}

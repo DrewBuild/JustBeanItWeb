@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your Just Bean It account has been confirmed."
+    />
+    <title>You’re confirmed. | Just Bean It</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Supabase redirect note: configure the email confirmation redirect URL to point to this page when email auth is ready. -->
+    <main class="confirmed-page">
+      <section class="confirmation-card" aria-labelledby="confirmed-title">
+        <img class="confirmation-logo" src="logo.png" alt="Just Bean It logo" />
+        <div class="check-mark" aria-hidden="true">✓</div>
+        <p class="eyebrow">Just Bean It</p>
+        <h1 id="confirmed-title">You’re confirmed.</h1>
+        <p class="tagline">Congrats — your Just Bean It account is ready.</p>
+        <p>
+          Head back to the app and log in to start finding coffee spots your
+          friends love.
+        </p>
+        <!-- TODO: Replace with final app deep link when configured. -->
+        <a class="button button-primary" href="justbeanit://login">
+          Back to Just Bean It
+        </a>
+        <p class="small-note">You can close this page after returning to the app.</p>
+      </section>
+    </main>
+  </body>
+</html>
